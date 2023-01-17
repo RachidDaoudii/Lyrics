@@ -1,5 +1,5 @@
 <?php
-class Artists{
+class Artistes{
     private $name;
 
     public function __construct($name)

@@ -175,19 +175,64 @@
  <!-- Modal -->
  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
    aria-hidden="true">
-   <div class="modal-dialog">
+    <div class="modal-dialog">
      <div class="modal-content">
        <div class="modal-header">
-         <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+         <h5 class="modal-title" id="exampleModalLabel">Songs</h5>
          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
        </div>
-       <div class="modal-body">...</div>
-       <div class="modal-footer">
-         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-           Close
-         </button>
-         <button type="button" class="btn btn-primary">Save changes</button>
-       </div>
+        <form action="" method="post"  class="row g-3 needs-validation" novalidate>
+            <div class="modal-body">
+                <div class="form-outline mb-3">
+                    <input type="text" class="form-control" id="Title" required />
+                    <label for="Title" class="form-label">Title</label>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please choose a title.</div>
+                </div>
+                <div class="form-outline mb-3">
+                    <textarea name="" id="Song" class="form-control" cols="5" rows="5" required>
+
+                    </textarea>
+                    <!-- <input type="text"  id=""  /> -->
+                    <label for="Song" class="form-label">Song</label>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please choose a song.</div>
+                </div>
+                <div class="form-outline mb-3">
+                    <input type="date" class="form-control" id="Add_the" required />
+                    <label for="Add_the" class="form-label">Add the</label>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please choose a Add the.</div>
+                </div>
+                <div class="form-outline mb-3">
+                    <input type="nomber" class="form-control" id="Duration" required />
+                    <label for="Duration" class="form-label">Duration</label>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please choose a duration.</div>
+                </div>
+                <div class="form-outline mb-3">
+                    <input type="text" class="form-control" id="name_Artist" required />
+                    <label for="name_Artist" class="form-label">Name Artist</label>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please choose a Name Artist.</div>
+                </div>
+                <div class="form-outline mb-3">
+                    <input type="text" class="form-control" id="category" required />
+                    <label for="category" class="form-label">Categories</label>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please choose a Name Categories.</div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-primary btn-floating btn-lg me-3">
+                <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                <button type="button" id="saveSong" class="btn btn-primary" >Save</button>
+            </div>
+        </form>
      </div>
-   </div>
- </div>
+    </div>
+</div>
