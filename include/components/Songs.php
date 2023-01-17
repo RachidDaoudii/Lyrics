@@ -2,7 +2,7 @@
     <h3>Songs</h3>
     <div class="d-flex justify-content-end">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-floating btn-lg" data-mdb-toggle="modal" data-mdb-target="#myModal">
+        <button type="button" id="modal" class="btn btn-primary btn-floating btn-lg" data-mdb-toggle="modal" data-mdb-target="#myModal">
         <i class="fas fa-plus-circle"></i>
         </button>
     </div>
@@ -36,6 +36,7 @@
                 href="#"
                 role="button"
                 data-ripple-color="primary"
+                data-mdb-toggle="modal" data-mdb-target="#myModal"
                 >Delete<i class="fas fa-trash ms-2"></i
                 ></a>
                 <a
@@ -43,6 +44,7 @@
                 href="#"
                 role="button"
                 data-ripple-color="primary"
+                data-mdb-toggle="modal" data-mdb-target="#myModal"
                 >Edit<i class="far fa-edit ms-2"></i
                 ></a>
             </div>
@@ -181,7 +183,8 @@
          <h5 class="modal-title" id="exampleModalLabel">Songs</h5>
          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
        </div>
-        <form action="" method="post"  class="row g-3 needs-validation" novalidate>
+        <form action="" method="post" id="form"  class="row g-3 needs-validation" novalidate>
+            <div id="demo">
             <div class="modal-body">
                 <div class="form-outline mb-3">
                     <input type="text" class="form-control" id="Title" required />
@@ -205,27 +208,38 @@
                     <div class="invalid-feedback">Please choose a Add the.</div>
                 </div>
                 <div class="form-outline mb-3">
-                    <input type="nomber" class="form-control" id="Duration" required />
+                    <input type="number" class="form-control" id="Duration" required />
                     <label for="Duration" class="form-label">Duration</label>
                     <div class="valid-feedback">Looks good!</div>
                     <div class="invalid-feedback">Please choose a duration.</div>
                 </div>
                 <div class="form-outline mb-3">
-                    <input type="text" class="form-control" id="name_Artist" required />
-                    <label for="name_Artist" class="form-label">Name Artist</label>
+                    <!-- <input type="text" class="form-control" id="name_Artist" required />
+                    <label for="name_Artist" class="form-label">Name Artist</label> -->
+                    <select  name="name_Artist" id="name_Artist" class="form-select" aria-label="Filter select" required>
+                    <option selected>Artistes</option>
+                    </select>
                     <div class="valid-feedback">Looks good!</div>
                     <div class="invalid-feedback">Please choose a Name Artist.</div>
                 </div>
                 <div class="form-outline mb-3">
-                    <input type="text" class="form-control" id="category" required />
-                    <label for="category" class="form-label">Categories</label>
+                    <!-- <input type="text" class="form-control" id="category" required />
+                    <label for="category" class="form-label">Categories</label> -->
+                    <select  name="category" id="category" class="form-select" aria-label="Filter select" required>
+                    <option selected>Categories</option>
+                    </select>
                     <div class="valid-feedback">Looks good!</div>
                     <div class="invalid-feedback">Please choose a Name Categories.</div>
                 </div>
             </div>
+            </div>
+            
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-primary btn-floating btn-lg me-3">
-                <i class="fas fa-plus"></i>
+            <button type="button" class="btn btn-primary btn-floating btn-lg me-3" id="MultiArtist">
+                  <i class="fas fa-plus"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-floating btn-lg me-3" id="MultiDelete">
+                  <i class="fas fa-minus"></i>
                 </button>
             </div>
             <div class="modal-footer">

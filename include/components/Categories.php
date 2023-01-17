@@ -51,10 +51,9 @@
                 <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
                 <button type="submit" id="saveCategory" class="btn btn-primary save"data-mdb-dismiss="modal" >Save</button>
                 <button type="submit" id="editCategory" class="btn btn-warning edit" data-mdb-dismiss="modal" >Edit</button>
-                
+                <button type="submit" id="deleteCategory" class="btn btn-danger delete" data-mdb-dismiss="modal" >Delete</button>
             </div>
         </form>
-        <button type="submit" id="deleteCategory" class="btn btn-danger delete" data-mdb-dismiss="modal" >Delete</button>
      </div>
     </div>
 </div>

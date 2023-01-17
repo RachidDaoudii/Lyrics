@@ -15,5 +15,17 @@ class artistesModel{
         $statement = DB::Connect()->prepare($sql);
         $statement->execute(array($artists->getName()));
     }
+
+    public function deleteArtistes($id){
+        $sql="DELETE FROM `artists` WHERE id = ?";
+        $statement = DB::Connect()->prepare($sql);
+        $statement->execute(array($id));
+    }
+
+    public function editArtistes(Artistes $artists,$id){
+        $sql="UPDATE `artists` SET `name`=? WHERE `id`=?";
+        $statement = DB::Connect()->prepare($sql);
+        $statement->execute(array($artists->getName(),$id));
+    }
     
 }

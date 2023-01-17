@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(!isset($_SESSION["id"]) && !isset($_SESSION['email'])){
+		header("location: login.php");
+		exit;
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,7 +109,7 @@
               aria-labelledby="navbarDropdownMenuLink"
             >
               <li>
-                <a class="dropdown-item" href="#">Logout</a>
+                <a class="dropdown-item" href="logout.php">Logout</a>
               </li>
             </ul>
           </li>

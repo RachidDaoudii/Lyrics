@@ -11,6 +11,17 @@ if(isset($_POST['artistes'])){
     }
     
 }if(isset($_POST['getArtistes'])){
+
     $res = $artistes->getArtistes();
     echo json_encode($res);
+}if(isset($_POST['deleteArtistes'])){
+
+    $id = $_POST['deleteArtistes'];
+    $artistes->deleteArtistes($id);
+
+}if(isset($_POST['id_Artist'])){
+    
+    $name = $_POST['name'];
+    $id = $_POST['id_Artist'];
+    $artistes->editArtistes(new Artistes($name), $id);
 }

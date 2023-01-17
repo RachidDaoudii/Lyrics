@@ -20,5 +20,5 @@ CREATE TABLE Musique(
     Add_the date,
     duration int,
     name_Artist int,
-    
+    Category int
 );

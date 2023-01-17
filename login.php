@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +71,7 @@
             <!-- Pills content -->
             <div class="tab-content">
             <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                <form>
+                <form method="post" action="include/handlers/userHandler.php">
                 <div class="text-center mb-3">
                     <p>Sign in with:</p>
                     <button type="button" class="btn btn-secondary btn-floating mx-1">
@@ -92,18 +95,18 @@
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                    <input type="email" id="loginName" class="form-control" />
-                    <label class="form-label" for="loginName">Email or username</label>
+                    <input type="email" name="loginEmail" id="loginName" class="form-control" />
+                    <label class="form-label" for="loginName">Email</label>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                    <input type="password" id="loginPassword" class="form-control" />
+                    <input type="password" name="loginPassword" id="loginPassword" class="form-control" />
                     <label class="form-label" for="loginPassword">Password</label>
                 </div>
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+                <button type="submit" id="login" name="login" class="btn btn-primary btn-block mb-4">Sign in</button>
                 </form>
             </div>
         </div>

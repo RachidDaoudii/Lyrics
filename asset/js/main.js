@@ -94,8 +94,11 @@ MultiArtist.addEventListener('click',function () {
 var MultiDelete = document.querySelector("#MultiDelete");
 MultiDelete.addEventListener('click',function () {
     const list = document.querySelector(".modal-body");
-  list.removeChild(list.lastElementChild);
+    list.removeChild(list.lastElementChild);
+    const listSong = document.querySelector(".modal-body");
+    listSong.removeChild(listSong.lastElementChild);
 })
+
 
 //return info Category
 function returnInfoCategory(id){
@@ -119,13 +122,13 @@ document.getElementById('modal').addEventListener('click',function(){
     document.querySelector('.delete').style.display='none'
 })
 
- function displayBtn(){
+function displayBtn(){
     document.querySelector('.save').style.display='none'
     document.querySelector('.edit').style.display=''
     document.querySelector('.delete').style.display=''
 }
     
-
+// delete Category
 function deleteCatigories(){
     $("#deleteCategory").click(function(){
         var id = document.querySelector("#id_category").value;
@@ -135,9 +138,65 @@ function deleteCatigories(){
         })
     });
 }
+
+ // edit Category
+function editCatigories(){
+    $("#editCategory").click(function(){
+        var id = document.querySelector("#id_category").value;
+        var name = document.querySelector("#category").value;
+        $.post("./include/handlers/categoriesHandler.php",
+        {
+            id_category:id,
+            name:name
+        })
+    });
+}
+
+
+
+// delete Artist
+$("#deleteArtist").click(function(){
+    var id = document.querySelector("#id_artist").value;
+    $.post("./include/handlers/artistesHandler.php",
+    {
+        deleteArtistes:id
+    })
+});
+
+ // edit Artist
+$("#editArtist").click(function(){
+    var id = document.querySelector("#id_artist").value;
+    var name = document.querySelector("#Artist").value;
+    $.post("./include/handlers/artistesHandler.php",
+    {
+        id_Artist:id,
+        name:name
+    })
+});
+
+
+
+
+ // edit Artist
+ $("#saveSong").click(function(){
+    var title = document.querySelectorAll(".modal-body");
+    console.log(title);
+    // $.post("./include/handlers/songHandler.php",
+    // {
+    //     Title:title
+    // })
+});
+
+
+
+
 getCategories()
 getArtistes()
+
 saveCategory()
 saveAtrist()
 
 deleteCatigories()
+
+
+editCatigories()

@@ -18,8 +18,16 @@ class categoriesModel {
     }
 
     public function deleteCategories($id){
-        $sql="DELETE FROM categoeirs where id = ?";
+        $sql="DELETE FROM `categories` WHERE id = ?";
         $statement = DB::Connect()->prepare($sql);
         $statement->execute(array($id));
     }
+
+    public function editCategories(Categories $category,$id){
+        $sql="UPDATE `categories` SET `name`=? WHERE `id`=?";
+        $statement = DB::Connect()->prepare($sql);
+        $statement->execute(array($category->getName(),$id));
+    }
+
+
 }

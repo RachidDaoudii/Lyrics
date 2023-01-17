@@ -2,10 +2,10 @@
 
 // require_once ('../Models/categories.model.php');
 
-// class categoriesController{
+// class categoriesController extends categoriesModel{
 
-//     public function getCategories($db){
-//         return $this->getCategories($db);
+//     protected function testCategories(){
+//         return $this->test();
 //     }
 
 // }
