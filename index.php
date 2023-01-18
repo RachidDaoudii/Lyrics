@@ -4,6 +4,15 @@
 		header("location: login.php");
 		exit;
 	}
+
+  // include_once('DB/db.php');
+  // include_once('Models/categories.model.php');
+  // include_once('Models/artistes.model.php');
+
+  // $categoey = new categoriesModel();
+  // $artist = new artistesModel();
+  // $options = $categoey->getCategories();
+  // $artistes = $artist->getArtistes();
 ?>
 <!DOCTYPE html>
 <html lang="en">

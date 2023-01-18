@@ -49,3 +49,10 @@ body {
     height: 150px;
     overflow-y: auto;
 } */
+
+.truncat{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
