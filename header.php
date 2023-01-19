@@ -1,19 +1,3 @@
-<?php
-  session_start();
-  if(!isset($_SESSION["id"]) && !isset($_SESSION['email'])){
-		header("location: login.php");
-		exit;
-	}
-
-  // include_once('DB/db.php');
-  // include_once('Models/categories.model.php');
-  // include_once('Models/artistes.model.php');
-
-  // $categoey = new categoriesModel();
-  // $artist = new artistesModel();
-  // $options = $categoey->getCategories();
-  // $artistes = $artist->getArtistes();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,35 +115,7 @@
   <!--Main Navigation-->
   
   <!--Main layout-->
-  <main style="margin-top: 58px;">
-    <div class="container pt-4">
-    <?php
-      // if (isset($_GET['page'])) {
-      //   $page = $_GET['page'];
-      //   if ($page == "Songs") {
-      //     include_once('include/components/Songs.php');
-      //   } elseif ($page == "Categories") {
-      //     include_once('include/components/Categories.php');
-      //   }elseif ($page == "Artistes") {
-      //     include_once('include/components/Artistes.php');
-      //   }
-      // } else {
-      //   // page default
-      //   include_once('include/components/Satistique.php');
-      // }
-    ?>
-    </div>
-  </main>
-  <!--Main layout-->
+  <!-- <main style="margin-top: 58px;">
+    <div class="container pt-4"> -->
+
     
-</body>
-<!-- JQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="asset/js/main.js"></script>
-<!-- MDB -->
-<script
-type="text/javascript"
-src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
-></script>
-<script src="asset/js/validationForms.js"></script>
-</html>

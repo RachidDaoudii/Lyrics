@@ -14,7 +14,7 @@ class usersModel {
         }else{
             $_SESSION['id']=$res[0]["id"];
             $_SESSION['email']=$res[0]["email"];
-            header('Location: ../../index.php');
+            header('Location: ../../include/components/Satistique.php');
         }
     }
 

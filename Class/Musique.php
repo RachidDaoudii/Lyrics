@@ -3,14 +3,12 @@ class Musique{
     private $title;
     private $song;
     private $Add_the;
-    private $duration;
 
-    public function __construct($title,$song,$Add_the,$duration)
+    public function __construct($title,$song,$Add_the)
     {
         $this->title = $title;
         $this->song = $song;
         $this->Add_the = $Add_the;
-        $this->duration = $duration;
     }
 
     public function getTitle()
@@ -43,13 +41,4 @@ class Musique{
         $this->Add_the = $Add_the;
     }
 
-    public function getDuration()
-    {
-        return $this->duration;
-    }
-
-    public function setDuration($duration)
-    {
-        $this->duration = $duration;
-    }
 }
