@@ -5,6 +5,23 @@
 		exit;
 	}
 
+  include_once('../../DB/db.php');
+  include_once('../../Models/categories.model.php');
+  include_once('../../Models/artistes.model.php');
+  include_once('../../Models/songs.model.php');
+  include_once('../../Models/user.model.php');
+
+  $categoey = new categoriesModel();
+  $artist = new artistesModel();
+  $song = new songModel();
+  $user = new usersModel();
+
+  $countCategory = $categoey->countCategories();
+  $countArtist = $artist->countArtistes();
+  $countSong = $song->countSongs();
+  $countUser = $user->countUsers();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -126,12 +143,71 @@
     <main style="margin-top: 58px;">
     <div class="container pt-4">
         <div class="d-flex justify-content-between pt-5 pb-3">
-        <h3>Satistique</h3>
+          <h3>Satistique</h3>
         </div>
         <div class="row" id="Satistique">
-        
+        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                <div class="card bg-primary">
+                    <div class="card-body">
+                    <div class="d-flex justify-content-between px-md-1">
+                        <div class="align-self-center">
+                        <i class="fas fa-guitar text-success fa-3x"></i>
+                        </div>
+                        <div class="text-end">
+                        <h3 class="text-white"><?php echo $countSong; ?></h3>
+                        <p class="mb-0 text-white">Total musique</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                <div class="card bg-primary">
+                    <div class="card-body">
+                    <div class="d-flex justify-content-between px-md-1">
+                        <div class="align-self-center">
+                        <i class="fas fa-music text-danger fa-3x"></i>
+                        </div>
+                        <div class="text-end">
+                        <h3 class="text-white"><?php echo $countCategory; ?></h3>
+                        <p class="mb-0 text-white">Total Category</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                <div class="card bg-primary">
+                    <div class="card-body">
+                    <div class="d-flex justify-content-between px-md-1">
+                        <div>
+                        <h3 class="text-white"><?php echo $countArtist; ?></h3>
+                        <p class="mb-0 text-white">Total Artist</p>
+                        </div>
+                        <div class="align-self-center">
+                        <i class="far fa-user text-success fa-3x"></i>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                <div class="card bg-primary">
+                    <div class="card-body">
+                    <div class="d-flex justify-content-between px-md-1">
+                        <div>
+                        <h3 class="text-white"><?php echo $countUser; ?></h3>
+                        <p class="mb-0 text-white">Total users</p>
+                        </div>
+                        <div class="align-self-center">
+                        <i class="far fa-user text-success fa-3x"></i>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
         </div>
-        </div>
+    </div>
     </main>
   <!--Main layout-->
     

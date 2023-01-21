@@ -18,5 +18,13 @@ class usersModel {
         }
     }
 
+    public function countUsers(){
+        $sql="SELECT COUNT(id) FROM `users`";
+        $statement = DB::Connect()->prepare($sql);
+        $statement->execute();
+        $res = $statement->fetchColumn();
+        return $res;
+    }
+
 
 }

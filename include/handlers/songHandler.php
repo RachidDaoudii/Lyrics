@@ -6,6 +6,19 @@ include_once ('../../Class/Musique.php');
 
 $song = new songModel();
 
+//function validation input 
+function Validation($input){
+    //Supprime les espaces debut et fin 
+    $input = trim($input);
+    //Supprimer quote string (\n \t \)
+    $input = stripcslashes($input);
+    //Convertit les balise html en string
+    $input = htmlspecialchars($input);
+    //Supprime les espaces center
+    $input = preg_replace('/\s+/',' ', $input);
+    return $input;
+}
+
 if(isset($_POST["DataTitle"]))
 {
     $DataTitle = $_POST["DataTitle"];
@@ -16,7 +29,7 @@ if(isset($_POST["DataTitle"]))
     $Datacategory = $_POST['Datacategory'];
 
     for ($i=0; $i < $nbr ; $i++) { 
-        $song->addSong(new Musique($DataTitle[$i],$Song[$i],$DataAdd_the[$i],),$DataArtistes[$i],$Datacategory[$i]);
+        $song->addSong(new Musique(Validation($DataTitle[$i]),Validation($Song[$i]),Validation($DataAdd_the[$i])),Validation($DataArtistes[$i]),Validation($Datacategory[$i]));
 
     }
 
@@ -28,12 +41,12 @@ if(isset($_POST["DataTitle"]))
     $song->deleteSong($id);
 }
 if(isset($_POST['editSong'])){
-    $id = $_POST['editSong'];
-    $title = $_POST['title'];
-    $songs = $_POST['song'];
-    $date = $_POST['date'];
-    $artist = $_POST['artist'];
-    $category = $_POST['category'];
+    $id = Validation($_POST['editSong']);
+    $title = Validation($_POST['title']);
+    $songs = Validation($_POST['song']);
+    $date = Validation($_POST['date']);
+    $artist = Validation($_POST['artist']);
+    $category = Validation($_POST['category']);
 
     $song->editSong(new Musique($title,$songs,$date),$artist,$category,$id);
 }

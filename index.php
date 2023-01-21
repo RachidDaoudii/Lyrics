@@ -1,19 +1,3 @@
-<?php
-  session_start();
-  if(!isset($_SESSION["id"]) && !isset($_SESSION['email'])){
-		header("location: login.php");
-		exit;
-	}
-
-  // include_once('DB/db.php');
-  // include_once('Models/categories.model.php');
-  // include_once('Models/artistes.model.php');
-
-  // $categoey = new categoriesModel();
-  // $artist = new artistesModel();
-  // $options = $categoey->getCategories();
-  // $artistes = $artist->getArtistes();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +26,7 @@
     <!--Main Navigation-->
 <header>
     <!-- Sidebar -->
-    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+    <!-- <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
       <div class="position-sticky">
         <div class="list-group list-group-flush mx-3 mt-4" id="listGroup">
           <a
@@ -63,7 +47,7 @@
           </a>
         </div>
       </div>
-    </nav>
+    </nav> -->
     <!-- Sidebar  -->
   
     <!-- Navbar -->
@@ -99,28 +83,10 @@
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
+              href="login.php"
             >
-              <img
-                src="asset/img//user.png"
-                class="rounded-circle"
-                height="22"
-                alt="Avatar"
-                loading="lazy"
-              />
+            Login
             </a>
-            <ul
-              class="dropdown-menu dropdown-menu-end"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <li>
-                <a class="dropdown-item" href="logout.php">Logout</a>
-              </li>
-            </ul>
           </li>
         </ul>
       </div>
@@ -131,23 +97,17 @@
   <!--Main Navigation-->
   
   <!--Main layout-->
-  <main style="margin-top: 58px;">
+  <main style="margin-top: 58px;padding:0px;">
     <div class="container pt-4">
-    <?php
-      // if (isset($_GET['page'])) {
-      //   $page = $_GET['page'];
-      //   if ($page == "Songs") {
-      //     include_once('include/components/Songs.php');
-      //   } elseif ($page == "Categories") {
-      //     include_once('include/components/Categories.php');
-      //   }elseif ($page == "Artistes") {
-      //     include_once('include/components/Artistes.php');
-      //   }
-      // } else {
-      //   // page default
-      //   include_once('include/components/Satistique.php');
-      // }
-    ?>
+      <div class="d-flex justify-content-center">
+        <div class="form-outline w-50 mt-4 mb-4">
+          <input type="text" class="form-control" name="Search" id="Search" />
+          <label for="Search" class="form-label">Search</label>
+        </div>
+      </div>
+      <div class="row" id="Songs">
+        
+      </div>
     </div>
   </main>
   <!--Main layout-->

@@ -143,6 +143,10 @@
         
 <div class="d-flex justify-content-between pb-3">
     <h3>Songs</h3>
+    <div class="form-outline w-50">
+      <input type="text" class="form-control" name="Search" id="Search" />
+      <label for="Search" class="form-label">Search</label>
+    </div>
     <div class="d-flex justify-content-end">
         <!-- Button trigger modal -->
         <button type="button" id="modal" class="btn btn-primary btn-floating btn-lg" data-mdb-toggle="modal" data-mdb-target="#myModal">

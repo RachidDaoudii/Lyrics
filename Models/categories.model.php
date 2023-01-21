@@ -29,5 +29,13 @@ class categoriesModel {
         $statement->execute(array($category->getName(),$id));
     }
 
+    public function countCategories(){
+        $sql="SELECT COUNT(id) FROM `categories`";
+        $statement = DB::Connect()->prepare($sql);
+        $statement->execute();
+        $res = $statement->fetchColumn();
+        return $res;
+    }
+
 
 }

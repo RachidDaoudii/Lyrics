@@ -27,5 +27,13 @@ class artistesModel{
         $statement = DB::Connect()->prepare($sql);
         $statement->execute(array($artists->getName(),$id));
     }
+
+    public function countArtistes(){
+        $sql="SELECT COUNT(id) FROM `artists`";
+        $statement = DB::Connect()->prepare($sql);
+        $statement->execute();
+        $res = $statement->fetchColumn();
+        return $res;
+    }
     
 }

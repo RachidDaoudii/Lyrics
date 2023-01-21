@@ -1,4 +1,48 @@
 
+$.post("./include/handlers/songHandler.php",
+{
+    getSongs:true,
+},function(data){
+data = JSON.parse(data);
+var Artistes = document.querySelector("#Songs");
+for (let i = 0; i < data.length; i++) {
+    Artistes.innerHTML+=`
+    <div class="col-xl-6 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <div id="${data[i].id}" class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <img
+                        src="asset/img/album.jpg"
+                        alt=""
+                        style="width: 45px; height: 45px"
+                        class="rounded-circle"
+                        />
+                        <div class="ms-3">
+                        <h4 class="fw-bold mb-1">${data[i]['title']}</h4>
+                        <p class="fw-bold mb-1" data="${data[i]['id_artist']}">${data[i]['artist']}</p>
+                        <p class="text-muted mb-0 me-5" style="overflow: hidden;display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">${data[i]['song']}</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <span class="badge rounded-pill badge-success mb-3" data="${data[i]['id_category']}">${data[i]['category']} <i class="fas fa-play"></i></span>
+                        <span class="badge rounded-pill badge-success" data="${data[i]['date']}">${data[i]['date']} <i class="far fa-clock"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`;
+}
+})
+
+
+$("#Search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#Songs div").filter(function() {
+        $(this).toggle($(this).find('h4').text().toLowerCase().indexOf(value) > -1 || $(this).find('p').text().toLowerCase().indexOf(value) > -1)
+    });
+});
+
 // // getCategories
 function getCategories() {
     $.post("../handlers/categoriesHandler.php",
@@ -323,3 +367,8 @@ $("#editSong").click(function(){
         category:category
     })
 });
+
+
+
+
+

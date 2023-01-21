@@ -33,4 +33,12 @@ class songModel {
         $statement->execute(array($song->getTitle(),$song->getSong(),$song->getDate(),$artist,$category,$id));
     }
 
+    public function countSongs(){
+        $sql="SELECT COUNT(id) FROM `musique`";
+        $statement = DB::Connect()->prepare($sql);
+        $statement->execute();
+        $res = $statement->fetchColumn();
+        return $res;
+    }
+
 }

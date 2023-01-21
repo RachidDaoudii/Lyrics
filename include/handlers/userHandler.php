@@ -4,13 +4,24 @@ session_start();
 include_once ('../../Models/user.model.php');
 include_once ('../../Class/Users.php');
 
-
+//function validation input 
+function Validation($input){
+   //Supprime les espaces debut et fin 
+   $input = trim($input);
+   //Supprimer quote string (\n \t \)
+   $input = stripcslashes($input);
+   //Convertit les balise html en string
+   $input = htmlspecialchars($input);
+   //Supprime les espaces center
+   $input = preg_replace('/\s+/',' ', $input);
+   return $input;
+}
 
 
 if(isset($_POST["login"]))
 {
-   $email = $_POST["loginEmail"]; 
-   $password = $_POST["loginPassword"]; 
+   $email = Validation($_POST["loginEmail"]); 
+   $password = Validation($_POST["loginPassword"]); 
 
    if(empty($email) || empty($password)){
 
