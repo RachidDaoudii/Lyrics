@@ -141,7 +141,7 @@
   <main style="margin-top: 58px;">
     <div class="container pt-4">
         
-<div class="d-flex justify-content-between pb-3">
+<div class="d-flex justify-content-between pb-3 mediaSong">
     <h3>Songs</h3>
     <div class="form-outline w-50">
       <input type="text" class="form-control" name="Search" id="Search" />
@@ -176,28 +176,26 @@
                 <div class="modal-body">
                     <div id="demo">
                         <input type="hidden" name="id" id="id" value="">
-                        <div class="form-outline mb-3">
+                        <div class="form-outline mb-4">
                         <input type="text" class="form-control" name="Title" id="Title" required />
                         <label for="Title" class="form-label">Title</label>
                         <div class="valid-feedback">Looks good!</div>
                         <div class="invalid-feedback">Please choose a title.</div>
                         </div>
-                        <div class="form-outline mb-3">
+                        <div class="form-outline mb-4">
                             <textarea name="" id="Song" class="form-control" cols="5" rows="5" required>
-
                             </textarea>
-                            <!-- <input type="text"  id=""  /> -->
                             <label for="Song" class="form-label">Song</label>
                             <div class="valid-feedback">Looks good!</div>
                             <div class="invalid-feedback">Please choose a song.</div>
                         </div>
-                        <div class="form-outline mb-3">
+                        <div class="form-outline mb-4">
                             <input type="date" class="form-control" id="Add_the" required />
                             <label for="Add_the" class="form-label">Add the</label>
                             <div class="valid-feedback">Looks good!</div>
                             <div class="invalid-feedback">Please choose a Add the.</div>
                         </div>
-                        <div class="form-outline mb-3">
+                        <div class="form-outline mb-4">
                             <select  name="name_Artist" id="name_Artist" class="form-select" aria-label="Filter select" required>
                                 <option selected>Artistes</option>
                                 <?php foreach($artistes as $ar){
@@ -207,7 +205,7 @@
                             <div class="valid-feedback">Looks good!</div>
                             <div class="invalid-feedback">Please choose a Name Artist.</div>
                         </div>
-                        <div class="form-outline mb-3">
+                        <div class="form-outline mb-4">
                             <select  name="category" id="category" class="form-select" aria-label="Filter select" required>
                             <option selected>Categories</option>
                             <?php foreach($options as $cat){
@@ -230,8 +228,8 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
                 <button type="submit" name="saveSong" id="saveSong" class="btn btn-primary save" >Save</button>
-                <button type="submit" id="editSong" class="btn btn-warning edit" data-mdb-dismiss="modal" >Edit</button>
-                <button type="submit" id="deleteSong" class="btn btn-danger delete" data-mdb-dismiss="modal" >Delete</button>
+                <button type="submit" id="editSong" class="btn btn-warning edit">Edit</button>
+                <button type="submit" id="deleteSong" class="btn btn-danger delete">Delete</button>
             </div>
         </form>
      </div>

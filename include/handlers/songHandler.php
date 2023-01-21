@@ -29,18 +29,27 @@ if(isset($_POST["DataTitle"]))
     $Datacategory = $_POST['Datacategory'];
 
     for ($i=0; $i < $nbr ; $i++) { 
-        $song->addSong(new Musique(Validation($DataTitle[$i]),Validation($Song[$i]),Validation($DataAdd_the[$i])),Validation($DataArtistes[$i]),Validation($Datacategory[$i]));
 
+        if(empty($DataTitle[$i]) && empty($Song[$i]) && empty($DataAdd_the[$i]) && empty($DataArtistes[$i]) && empty($Datacategory[$i])){
+
+        }else{
+            $song->addSong(new Musique(Validation($DataTitle[$i]),Validation($Song[$i]),Validation($DataAdd_the[$i])),Validation($DataArtistes[$i]),Validation($Datacategory[$i]));
+        }
     }
 
 }if(isset($_POST['getSongs'])){
+
     $res = $song->getSongs();
     echo json_encode($res);
+
 }if(isset($_POST['deleteSong'])){
+
     $id = $_POST['deleteSong'];
     $song->deleteSong($id);
+    
 }
 if(isset($_POST['editSong'])){
+
     $id = Validation($_POST['editSong']);
     $title = Validation($_POST['title']);
     $songs = Validation($_POST['song']);
@@ -48,7 +57,11 @@ if(isset($_POST['editSong'])){
     $artist = Validation($_POST['artist']);
     $category = Validation($_POST['category']);
 
-    $song->editSong(new Musique($title,$songs,$date),$artist,$category,$id);
+    if(empty($id) && empty($title) && empty($song) && empty($date) && empty($artist) && empty($category)){
+
+    }else{
+        $song->editSong(new Musique($title,$songs,$date),$artist,$category,$id);
+    }
 }
 
 

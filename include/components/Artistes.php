@@ -168,9 +168,9 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                <button type="submit" id="saveArtist" class="btn btn-primary save" data-mdb-dismiss="modal" >Save</button>
-                <button type="submit" id="editArtist" class="btn btn-warning edit" data-mdb-dismiss="modal" >Edit</button>
-                <button type="submit" id="deleteArtist" class="btn btn-danger delete" data-mdb-dismiss="modal" >Delete</button>
+                <button type="submit" id="saveArtist" class="btn btn-primary save">Save</button>
+                <button type="submit" id="editArtist" class="btn btn-warning edit" >Edit</button>
+                <button type="submit" id="deleteArtist" class="btn btn-danger delete">Delete</button>
             </div>
         </form>
      </div>

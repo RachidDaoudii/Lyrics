@@ -23,7 +23,11 @@ if(isset($_POST['category'])){
     $name = $_POST['category'];
 
     for ($i=0; $i <count($name) ; $i++) { 
-        $Categories->AddCategories(new Categories(Validation($name[$i])));
+        if(empty($name[$i])){
+            
+        }else{
+            $Categories->AddCategories(new Categories(Validation($name[$i])));
+        }
     }
     
 }if(isset($_POST['getCategories'])){
@@ -38,7 +42,11 @@ if(isset($_POST['category'])){
 
 }if(isset($_POST['id_category'])){
     
-    $name = Validation($_POST['name']);
     $id = $_POST['id_category'];
-    $Categories->editCategories(new Categories($name), $id);
+    $name = Validation($_POST['name']);
+    if(empty($name)){
+
+    }else{
+        $Categories->editCategories(new Categories($name), $id);
+    }
 }

@@ -38,21 +38,25 @@ body {
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   }
 
-  /* .modal{
-    display: block !important;
-}
-
-.modal-dialog{
-    overflow-y: initial !important
-}
-.modal-body{
-    height: 150px;
-    overflow-y: auto;
-} */
-
 .truncat{
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+}
+
+
+@media only screen and (max-width: 406px) {
+  .media {
+    padding-bottom: 70px;
+  }
+  .column{
+    position: absolute;
+    bottom: 70px;
+    padding-bottom: 10px;
+    left: 80px;
+  }
+  .mediaSong{
+    display: block;
+  }
 }

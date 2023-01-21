@@ -25,7 +25,11 @@ if(isset($_POST['artistes'])){
     $name = $_POST['artistes'];
 
     for ($i=0; $i <count($name) ; $i++) { 
-        $artistes->addArtistes(new Artistes(Validation($name[$i])));
+        if(empty($name[$i])){
+
+        }else{
+            $artistes->addArtistes(new Artistes(Validation($name[$i])));
+        }
     }
     
 }if(isset($_POST['getArtistes'])){
@@ -39,7 +43,12 @@ if(isset($_POST['artistes'])){
 
 }if(isset($_POST['id_Artist'])){
     
-    $name = Validation($_POST['name']);
     $id = $_POST['id_Artist'];
-    $artistes->editArtistes(new Artistes($name), $id);
+    $name = Validation($_POST['name']);
+
+    if(empty($name)){
+
+    }else{
+        $artistes->editArtistes(new Artistes($name), $id);
+    }
 }
