@@ -48,6 +48,7 @@ body {
 
 @media only screen and (max-width: 406px) {
   .media {
+    background-color: aqua;
     padding-bottom: 70px;
   }
   .column{
