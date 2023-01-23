@@ -183,7 +183,7 @@
                         <div class="invalid-feedback">Please choose a title.</div>
                         </div>
                         <div class="form-outline mb-4">
-                            <textarea name="" id="Song" class="form-control" cols="5" rows="5" required>
+                            <textarea name="" id="Song" class="form-control" cols="" rows="" required>
                             </textarea>
                             <label for="Song" class="form-label">Song</label>
                             <div class="valid-feedback">Looks good!</div>
@@ -227,7 +227,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                <button type="submit" name="saveSong" id="saveSong" class="btn btn-primary save" >Save</button>
+                <button type="button" name="saveSong" id="saveSong" class="btn btn-primary save" >Save</button>
                 <button type="submit" id="editSong" class="btn btn-warning edit">Edit</button>
                 <button type="submit" id="deleteSong" class="btn btn-danger delete">Delete</button>
             </div>

@@ -10,7 +10,7 @@ for (let i = 0; i < data.length; i++) {
     <div class="col-xl-6 mb-4">
         <div class="card">
             <div class="card-body">
-                <div id="${data[i].id}" class="d-flex justify-content-between align-items-center ">
+                <div id="${data[i].id}" class="d-flex justify-content-between align-items-center media">
                     <div class="d-flex align-items-center">
                         <img
                         src="asset/img/album.jpg"
@@ -24,7 +24,7 @@ for (let i = 0; i < data.length; i++) {
                         <p class="text-muted mb-0 me-5" style="overflow: hidden;display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">${data[i]['song']}</p>
                         </div>
                     </div>
-                    <div class="d-flex flex-column ">
+                    <div class="d-flex flex-column columnindex">
                         <span class="badge rounded-pill badge-success mb-3" data="${data[i]['id_category']}">${data[i]['category']} <i class="fas fa-play"></i></span>
                         <span class="badge rounded-pill badge-success" data="${data[i]['date']}">${data[i]['date']} <i class="far fa-clock"></i></span>
                     </div>
@@ -129,14 +129,10 @@ function saveAtrist() {
 }
 
 //Add
-var el=0
 var MultiArtist = document.querySelector("#MultiArtist");
 MultiArtist.addEventListener('click',function () {
-    el++
     const node = document.getElementById("demo");
     const clone = node.cloneNode(true);
-    const form = document.createElement('h2').innerText = "Element"+el
-    document.querySelector("#demo").appendChild(form);
     document.querySelector(".modal-body").appendChild(clone);
 
 })

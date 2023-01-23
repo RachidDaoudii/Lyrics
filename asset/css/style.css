@@ -48,7 +48,6 @@ body {
 
 @media only screen and (max-width: 406px) {
   .media {
-    background-color: aqua;
     padding-bottom: 70px;
   }
   .column{
@@ -56,6 +55,12 @@ body {
     bottom: 70px;
     padding-bottom: 10px;
     left: 80px;
+  }
+  .columnindex{
+    position: absolute;
+    padding-bottom: 10px;
+    left: 80px;
+    bottom: 23px;
   }
   .mediaSong{
     display: block;

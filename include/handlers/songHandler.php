@@ -28,6 +28,7 @@ if(isset($_POST["DataTitle"]))
     $DataArtistes = $_POST['DataArtistes'];
     $Datacategory = $_POST['Datacategory'];
 
+
     for ($i=0; $i < $nbr ; $i++) { 
 
         if(empty($DataTitle[$i]) && empty($Song[$i]) && empty($DataAdd_the[$i]) && empty($DataArtistes[$i]) && empty($Datacategory[$i])){
