@@ -2,9 +2,10 @@
 
 include_once ('../../Models/songs.model.php');
 include_once ('../../Class/Musique.php');
+include_once ('../../Controllers/Controller.Songs.php');
 
 
-$song = new songModel();
+$song = new songController();
 
 //function validation input 
 function Validation($input){
@@ -34,19 +35,19 @@ if(isset($_POST["DataTitle"]))
         if(empty($DataTitle[$i]) && empty($Song[$i]) && empty($DataAdd_the[$i]) && empty($DataArtistes[$i]) && empty($Datacategory[$i])){
 
         }else{
-            $song->addSong(new Musique(Validation($DataTitle[$i]),Validation($Song[$i]),Validation($DataAdd_the[$i])),Validation($DataArtistes[$i]),Validation($Datacategory[$i]));
+            $song->Add(new Musique(Validation($DataTitle[$i]),Validation($Song[$i]),Validation($DataAdd_the[$i])),Validation($DataArtistes[$i]),Validation($Datacategory[$i]));
         }
     }
 
 }if(isset($_POST['getSongs'])){
 
-    $res = $song->getSongs();
+    $res = $song->songs();
     echo json_encode($res);
 
 }if(isset($_POST['deleteSong'])){
 
     $id = $_POST['deleteSong'];
-    $song->deleteSong($id);
+    $song->Delete($id);
     
 }
 if(isset($_POST['editSong'])){
@@ -61,7 +62,7 @@ if(isset($_POST['editSong'])){
     if(empty($id) && empty($title) && empty($song) && empty($date) && empty($artist) && empty($category)){
 
     }else{
-        $song->editSong(new Musique($title,$songs,$date),$artist,$category,$id);
+        $song->Edit(new Musique($title,$songs,$date),$artist,$category,$id);
     }
 }
 

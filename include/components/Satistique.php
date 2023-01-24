@@ -5,7 +5,6 @@
 		exit;
 	}
 
-  include_once('../../DB/db.php');
   include_once('../../Models/categories.model.php');
   include_once('../../Models/artistes.model.php');
   include_once('../../Models/songs.model.php');

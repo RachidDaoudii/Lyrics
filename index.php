@@ -25,30 +25,6 @@
 <body>
     <!--Main Navigation-->
 <header>
-    <!-- Sidebar -->
-    <!-- <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
-      <div class="position-sticky">
-        <div class="list-group list-group-flush mx-3 mt-4" id="listGroup">
-          <a
-            href="index.php"
-            class="list-group-item list-group-item-action py-2 ripple active listGroup"
-            aria-current="true"
-          >
-            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>dashboard</span>
-          </a>
-          <a href="include/components/Categories.php" class="list-group-item list-group-item-action py-2 ripple listGroup">
-            <i class="fas fa-chart-area fa-fw me-3"></i><span>Categories</span>
-          </a>
-          <a href="index.php?page=Songs" class="list-group-item list-group-item-action py-2 ripple listGroup">
-            <i class="fas fa-chart-area fa-fw me-3"></i><span>Songs</span>
-          </a>
-          <a href="index.php?page=Artistes" class="list-group-item list-group-item-action py-2 ripple listGroup">
-            <i class="fas fa-chart-area fa-fw me-3"></i><span>Artistes</span>
-          </a>
-        </div>
-      </div>
-    </nav> -->
-    <!-- Sidebar  -->
   
     <!-- Navbar -->
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">

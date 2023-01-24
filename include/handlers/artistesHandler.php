@@ -1,10 +1,9 @@
 <?php
 include_once ('../../Models/artistes.model.php');
 include_once ('../../Class/Artists.php');
+include_once ('../../Controllers/Controller.Artistes.php');
 
-
-
-$artistes = new artistesModel();
+$artistes = new artistesController();
 
 
 //function validation input 
@@ -28,18 +27,18 @@ if(isset($_POST['artistes'])){
         if(empty($name[$i])){
 
         }else{
-            $artistes->addArtistes(new Artistes(Validation($name[$i])));
+            $artistes->Add(new Artistes(Validation($name[$i])));
         }
     }
     
 }if(isset($_POST['getArtistes'])){
 
-    $res = $artistes->getArtistes();
+    $res = $artistes->Artistes();
     echo json_encode($res);
 }if(isset($_POST['deleteArtistes'])){
 
     $id = $_POST['deleteArtistes'];
-    $artistes->deleteArtistes($id);
+    $artistes->Delete($id);
 
 }if(isset($_POST['id_Artist'])){
     
@@ -49,6 +48,6 @@ if(isset($_POST['artistes'])){
     if(empty($name)){
 
     }else{
-        $artistes->editArtistes(new Artistes($name), $id);
+        $artistes->Edit(new Artistes($name), $id);
     }
 }

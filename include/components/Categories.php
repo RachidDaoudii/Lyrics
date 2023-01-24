@@ -172,9 +172,6 @@
                 <button type="button" class="btn btn-primary btn-floating btn-lg me-3" id="MultiArtist">
                   <i class="fas fa-plus"></i>
                 </button>
-                <button type="button" class="btn btn-danger btn-floating btn-lg me-3" id="MultiDelete">
-                  <i class="fas fa-minus"></i>
-                </button>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>

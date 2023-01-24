@@ -2,9 +2,14 @@
 
 include_once ('../../Models/categories.model.php');
 include_once ('../../Class/Categories.php');
+include_once ('../../Controllers/Controller.Categories.php');
 
-$Categories = new categoriesModel();
+$Categories = new categoriesController();
 
+
+
+// var_dump($Categories->Categories());
+// die;
 
 //function validation input 
 function Validation($input){
@@ -26,19 +31,19 @@ if(isset($_POST['category'])){
         if(empty($name[$i])){
             
         }else{
-            $Categories->AddCategories(new Categories(Validation($name[$i])));
+            $Categories->Add(new Categories(Validation($name[$i])));
         }
     }
     
 }if(isset($_POST['getCategories'])){
 
-    $res = $Categories->getCategories();
+    $res = $Categories->Categories();
     echo json_encode($res);
 
 }if(isset($_POST['deleteCategory'])){
 
     $id = $_POST['deleteCategory'];
-    $Categories->deleteCategories($id);
+    $Categories->delete($id);
 
 }if(isset($_POST['id_category'])){
     
@@ -47,6 +52,6 @@ if(isset($_POST['category'])){
     if(empty($name)){
 
     }else{
-        $Categories->editCategories(new Categories($name), $id);
+        $Categories->Edit(new Categories($name), $id);
     }
 }

@@ -137,15 +137,6 @@ MultiArtist.addEventListener('click',function () {
 
 })
 
-// Delete
-var MultiDelete = document.querySelector("#MultiDelete");
-MultiDelete.addEventListener('click',function () {
-    const list = document.querySelector(".modal-body");
-    list.removeChild(list.lastElementChild);
-    const listSong = document.querySelector("#demo");
-    listSong.removeChild(listSong.lastElementChild);
-})
-
 
 //return info Category
 function returnInfoCategory(id){
@@ -182,7 +173,6 @@ document.getElementById('modal').addEventListener('click',function(){
     document.querySelector('.edit').style.display='none'
     document.querySelector('.delete').style.display='none'
     document.querySelector('#MultiArtist').style.display=''
-    document.querySelector('#MultiDelete').style.display=''
 })
 
 function displayBtn(){
@@ -190,7 +180,6 @@ function displayBtn(){
     document.querySelector('.edit').style.display=''
     document.querySelector('.delete').style.display=''
     document.querySelector('#MultiArtist').style.display='none'
-    document.querySelector('#MultiDelete').style.display='none'
 }
     
 // delete Category
